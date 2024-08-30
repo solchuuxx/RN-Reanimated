@@ -1,4 +1,4 @@
-import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
+import { StyleSheet, View, Pressable, Text, Image } from 'react-native';
 import Animated, { useSharedValue, withTiming, useAnimatedStyle, withSequence, withSpring } from 'react-native-reanimated';
 import { useEffect } from 'react';
 
@@ -79,11 +79,11 @@ export default function HomeScreen() {
           ¡Prueba la animación vibrante tocando el botón a continuación!
         </Text>
         
-        <TouchableOpacity onPress={handleButtonPress} style={styles.btn}>
+        <Pressable onPress={handleButtonPress} style={styles.btn}>
           <Animated.View style={buttonAnimatedStyle}>
             <Text style={styles.btnText}>Comenzar</Text>
           </Animated.View>
-        </TouchableOpacity>
+        </Pressable>
 
         <Animated.View style={[styles.infoBox, containerAnimatedStyle]}>
           <Text style={styles.infoText}>
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
-    width: 400,
+    width: 300,
   },
   infoText: {
     color: '#333',
